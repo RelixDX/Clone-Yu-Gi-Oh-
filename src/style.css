@@ -1,0 +1,243 @@
+/*Resets*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+/*Fontes*/
+
+@font-face{
+    font-family: "Yugioh";
+    src: url(./fonts/fonte-yu-gi-oh.otf);
+}
+
+/*Site*/
+
+body{
+    background-image: url('/src/images/fundo-site.jpg');
+    font-family: "Yugioh", serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    gap: 30px
+}
+
+.cabecalho{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.titulo{
+    color: #f1ecff;
+}
+
+.slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 130px;
+}
+
+.cartao{
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 5px;
+    position: absolute;
+}
+
+.selecionar{
+    opacity: 1;
+    z-index: 1;
+}
+
+.lista-personagens{
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.cartao .nome{
+    background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a);
+    border: 2px solid #a67c52;
+    border-radius: 4px;
+    font-size: 13px;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+.nivel-carta{
+    display: flex;
+    justify-content: right;
+    margin-right: 10px;
+}
+
+.estrela{
+    width: 20px;
+    height: 20px;
+    margin-left: 3px;
+    background-image: url(/src/images/nivel-carta.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.imagem-carta{
+    max-width: 260px;
+    align-self: center;
+}
+
+.informacoes{
+    border-radius: 5px;
+    max-width: 300px;
+    background: radial-gradient(circle, #f3e2c8, #e4cfa5, #c4a57a);
+    border: 2px solid #a67c52;
+    line-height: 1.5;
+}
+
+.informacoes-ataque{
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    padding: 10px;
+}
+
+.informacoes-ataque span{
+    font-size: 13px;
+}
+
+.descricao{
+    border-bottom: 1px solid #000;
+    padding: 10px;
+    max-height: 95px;
+    overflow-y: scroll;
+    font-size: 13px;
+}
+
+.fundo-1{
+    background-image: url(/src/images/fundo-1.jpg);
+}
+.fundo-2{
+    background-image: url(/src/images/fundo-2.jpg);
+}
+.fundo-3{
+    background-image: url(/src/images/fundo-3.jpg);
+}
+.fundo-4{
+    background-image: url(/src/images/fundo-4.jpg);
+}
+.fundo-5{
+    background-image: url(/src/images/fundo-5.jpg);
+}
+.fundo-6{
+    background-image: url(/src/images/fundo-6.jpg);
+}
+.fundo-7{
+    background-image: url(/src/images/fundo-7.jpg);
+}
+
+.btn-seta{
+    border-radius: 100%;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 70px;
+    z-index: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.btn-seta:hover{
+    background-color: #8351f3;
+}
+
+.btn-seta.btn-voltar{
+    transform: rotateY(180deg);
+}
+
+body::-webkit-scrollbar-track{
+    background-color: #c08057;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #c08057;
+    border-radius: 10px;
+}
+
+/*Responsividade*/
+
+@media (max-width: 768px) {
+    body{
+        background-position: center;
+        padding: 0 15px;
+    }
+    .slider{
+        gap: 80px
+    }
+}
+
+@media (max-width: 496px) {
+    .lista-personagens{
+        width: 250px;
+    }
+    .imagem-carta{
+        width: 100%;
+    }
+    .slider{
+        position: relative;
+    }
+    .btn-seta{
+        position: absolute;
+        bottom: -13%;
+    }
+    #btn-avancar{
+        right: 27%;
+    }
+    #btn-voltar{
+        left: 27%;
+    }
+}
+
+@media (max-width: 375px) {
+    body{
+        justify-content: start;
+    }
+    .cabecalho{
+        font-size: 12px;
+    }
+    .estrela{
+        width: 15px;
+        height: 15px;
+    }
+    .btn-seta{
+        bottom: -50px;
+    }
+    #btn-avancar{
+        right: 20%;
+    }
+    #btn-voltar{
+        left: 20%;
+    }
+
+}
